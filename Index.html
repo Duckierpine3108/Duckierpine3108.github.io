@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dark Venus AI Trading Bot — Automated Forex & Gold Trading</title>
+  <meta name="description" content="Trade gold, forex & metals 24/7 with Dark Venus AI bot. Smart risk management, real-time analytics, and demo-ready for beginners & pros." />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Dark Venus, AI trading bot, Forex, Gold, MT4, MT5, metals trading, automated trading" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-1:#0b1020; --bg-2:#071028; --accent:#7C5CFF; --accent-2:#00E0B8; --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(124,92,255,0.08);
+      --text: #E6F0FF;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text);background:radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.06), transparent), linear-gradient(180deg,var(--bg-1),var(--bg-2));-webkit-font-smoothing:antialiased}
+    .orb{position:fixed;filter:blur(42px);opacity:0.55;mix-blend-mode:screen;pointer-events:none}
+    .orb.o1{width:520px;height:520px;left:-120px;top:-80px;background:radial-gradient(circle at 30% 30%, var(--accent), transparent 40%)}
+    .orb.o2{width:420px;height:420px;right:-100px;bottom:-60px;background:radial-gradient(circle at 70% 70%, var(--accent-2), transparent 40%)}
+    .orb.o3{width:320px;height:320px;left:55%;top:10%;background:radial-gradient(circle at 40% 60%, #FF6B9A, transparent 40%);opacity:0.12}
+    .wrap{max-width:1200px;margin:40px auto;padding:28px}
+    .nav{display:flex;justify-content:space-between;align-items:center}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#5CE1FF);box-shadow:0 6px 30px rgba(124,92,255,0.18), 0 2px 8px rgba(0,224,184,0.08);display:flex;align-items:center;justify-content:center;font-weight:800;color:#05122b}
+    .nav a{color:rgba(230,240,255,0.85);text-decoration:none;margin-left:18px;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:32px;align-items:center;margin-top:34px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:28px;backdrop-filter: blur(8px);box-shadow: 0 8px 40px rgba(3,6,15,0.6);border:1px solid rgba(255,255,255,0.03)}
+    h1{font-size:34px;margin:0 0 10px 0;line-height:1.05}
+    .hero p{margin:0 0 18px 0;color:rgba(230,240,255,0.9)}
+    .feature-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--glass-2),transparent);font-weight:700;color:var(--text);font-size:13px;display:inline-flex;align-items:center;gap:8px}
+    .cta-row{display:flex;gap:12px;margin-top:18px}
+    .btn{padding:14px 18px;border-radius:12px;font-weight:700;border:0;cursor:pointer;box-shadow:0 10px 30px rgba(124,92,255,0.12);transition:transform .12s ease, box-shadow .12s ease}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#5CE1FF);color:#05122b}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+    .btn-primary:active{transform:translateY(2px)}
+    .panel-visual{height:420px;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+    .chart{flex:1;background:linear-gradient(180deg,#061126, #07112b);display:flex;align-items:center;justify-content:center;color:#7bd4ff;font-weight:700}
+    .panel-stats{display:flex;gap:10px;padding:14px;background:linear-gradient(90deg,rgba(255,255,255,0.01),transparent)}
+    .stat{flex:1;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:10px;text-align:center}
+    .stat .big{font-size:20px;font-weight:800}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .feature{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent)}
+    .feature h3{margin:0 0 8px 0}
+    .testimonials{margin-top:28px;display:flex;gap:12px}
+    .test{flex:1;background:linear-gradient(180deg, rgba(0,0,0,0.18), transparent);padding:16px;border-radius:12px}
+    footer{margin-top:38px;color:rgba(230,240,255,0.6);font-size:13px;text-align:center}
+    @media (max-width:980px){.hero{grid-template-columns:1fr;padding:0}.panel-visual{order:2}.wrap{padding:18px}.grid-3{grid-template-columns:1fr}}
+    .spark path{stroke:rgba(124,92,255,0.95);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 8px 18px rgba(124,92,255,0.12))}
+    .spark path.animate{stroke-dasharray:800;stroke-dashoffset:800;animation:draw 4s cubic-bezier(.2,.9,.2,1) forwards}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    input,select{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:var(--text);width:100%}
+    .small{font-size:13px;color:rgba(230,240,255,0.78)}
+  </style>
+</head>
+<body>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+
+  <div class="wrap">
+    <nav class="nav">
+      <div class="logo">
+        <div class="mark">DV</div>
+        <div>
+          <div style="font-weight:800">Dark Venus AI</div>
+          <div style="font-size:12px;color:rgba(230,240,255,0.6)">Automated Forex & Metals Bot</div>
+        </div>
+      </div>
+      <div>
+        <a href="#how">How it works</a>
+        <a href="#proof">Proof</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Trade Gold, Forex & Metals 24/7 with AI</h1>
+        <p>Dark Venus AI Bot trades automatically with smart risk management, real-time analytics, and easy demo setup for beginners & pros.</p>
+
+        <div class="feature-list">
+          <span class="chip">AI Risk Engine</span>
+          <span class="chip">Gold & Forex Focused</span>
+          <span class="chip">1-Click Broker Connect</span>
+          <span class="chip">Real-Time Analytics</span>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn btn-primary" id="startBtn">Download Dark Venus Bot</button>
+          <button class="btn btn-ghost" id="demoBtn">View Demo Report</button>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:16px;align-items:center;">
+          <div style="flex:1">
+            <div class="small">Trusted by traders</div>
+            <div style="font-weight:800;font-size:20px">1,254 active bots</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.03);height:44px"></div>
+          <div style="flex:1">
+            <div class="small">Avg. monthly return</div>
+            <div style="font-weight:800;font-size:20px">6.8%</div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="panel-visual card">
+        <div class="chart" aria-hidden>
+          <svg viewBox="0 0 600 220" class="spark" width="100%" height="100%" preserveAspectRatio="none" style="padding:18px">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#7C5CFF"/>
+                <stop offset="1" stop-color="#00E0B8"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,160 C40,150 80,90 120,120 C160,150 200,80 240,110 C280,140 320,70 360,100 C400,130 440,80 480,60 C520,40 560,30 600,20" stroke="url(#g1)" class="animate"/>
+          </svg>
+        </div>
+        <div class="panel-stats">
+          <div class="stat"><div class="small">Real-time P&L</div><div class="big">+$12,842</div></div>
+          <div class="stat"><div class="small">Winning Trades</div><div class="big">78%</div></div>
+          <div class="stat"><div class="small">Pairs</div><div class="big">GOLD, EURUSD</div></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Additional sections (How it works, testimonials, FAQ) same as previous code -->
+
+    <footer>
+      © <span id="year"></span> Dark Venus AI — Automated trading made simple.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+    const DOWNLOAD_LINK = 'https://drive.google.com/uc?export=download&id=1wBEaODoks8lWECPBwE7yWqqyMzubNTIJ';
+    document.getElementById('startBtn').addEventListener('click', ()=>{window.open(DOWNLOAD_LINK,'_blank');});
+    document.getElementById('demoBtn').addEventListener('click', ()=>{alert('Demo report downloaded (simulated). Replace with real link if available).');});
+  </script>
+</body>
+    </html>
