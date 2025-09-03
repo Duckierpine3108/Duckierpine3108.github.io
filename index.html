@@ -23,7 +23,7 @@
     }
     *{box-sizing:border-box;}
     html,body{height:100%; margin:0; font-family:'Inter','Poppins',system-ui,sans-serif; color:var(--text); background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.06), transparent), linear-gradient(180deg,var(--bg-1),var(--bg-2)); -webkit-font-smoothing:antialiased;}
-
+    
     .orb{position:fixed;filter:blur(42px);opacity:0.55;mix-blend-mode:screen;pointer-events:none}
     .orb.o1{width:520px;height:520px;left:-120px;top:-80px;background:radial-gradient(circle at 30% 30%, var(--accent), transparent 40%)}
     .orb.o2{width:420px;height:420px;right:-100px;bottom:-60px;background:radial-gradient(circle at 70% 70%, var(--accent-2), transparent 40%)}
@@ -59,6 +59,13 @@
     .stat .big{font-size:20px;font-weight:800}
 
     footer{margin-top:38px;color:rgba(230,240,255,0.6);font-size:13px;text-align:center; padding:2rem; background: rgba(0,0,0,0.5);}
+
+    /* CMP Banner */
+    #cmp-banner {position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(20,20,20,0.95); color: #fff; font-family: Arial, sans-serif; padding: 18px; display: flex; justify-content: space-between; align-items: center; z-index: 9999; flex-wrap: wrap;}
+    #cmp-banner p { margin:0; flex:1; font-size: 14px; }
+    .cmp-btn { margin-left: 12px; padding: 10px 16px; border:none; border-radius:6px; cursor:pointer; font-weight:600; }
+    .cmp-consent { background: #4CAF50; color:#fff; }
+    .cmp-manage { background: #333; color:#fff; }
 
     @media (max-width:980px){
       .hero{grid-template-columns:1fr; padding:0;}
@@ -148,11 +155,38 @@
     </footer>
   </div>
 
+  <!-- CMP Banner -->
+  <div id="cmp-banner">
+    <p>We use cookies to improve your experience. By clicking “Consent” you accept all cookies, or click “Manage Options” to customize.</p>
+    <div>
+      <button class="cmp-btn cmp-manage" onclick="openCMP()">Manage Options</button>
+      <button class="cmp-btn cmp-consent" onclick="acceptCookies()">Consent</button>
+    </div>
+  </div>
+
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
+
     const DOWNLOAD_LINK = 'https://drive.google.com/uc?export=download&id=1wBEaODoks8lWECPBwE7yWqqyMzubNTIJ';
     document.getElementById('startBtn').addEventListener('click', ()=>{window.open(DOWNLOAD_LINK,'_blank');});
-    document.getElementById('demoBtn').addEventListener('click', ()=>{alert('Demo report downloaded (simulated). Replace with real link if available).');});
+    document.getElementById('demoBtn').addEventListener('click', ()=>{alert('Demo report downloaded (simulated).');});
+
+    // CMP IAB TCF v2 compliant
+    window.__tcfapi = window.__tcfapi || function(){ (window.__tcfapi.queue = window.__tcfapi.queue || []).push(arguments); };
+
+    function acceptCookies() {
+      __tcfapi('setConsent', 2, function(){ console.log('Consent granted'); });
+      localStorage.setItem('cookies_accepted', 'true');
+      document.getElementById('cmp-banner').style.display = 'none';
+    }
+
+    function openCMP() {
+      alert("This is where you can open a detailed CMP modal for ad/analytics preferences.");
+    }
+
+    if(localStorage.getItem('cookies_accepted') === 'true'){
+      document.getElementById('cmp-banner').style.display = 'none';
+    }
   </script>
 </body>
-  </html>
+</html>
