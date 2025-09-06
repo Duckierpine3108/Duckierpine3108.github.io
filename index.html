@@ -4,189 +4,132 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Dark Venus AI / AI TradePulse — Smart Forex & Gold Trading</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Trade gold, forex & metals 24/7 with Dark Venus AI or AI TradePulse. Smart risk management, real-time analytics, demo funds, and free bot downloads." />
-  <meta name="keywords" content="Dark Venus, AI trading bot, AI TradePulse, Forex, Gold, MT4, MT5, metals trading, automated trading, Exness bonus, virtual funds" />
-  <meta name="robots" content="index, follow" />
 
-  <!-- Google AdSense verification -->
-  <meta name="google-adsense-account" content="ca-pub-6331177631769751">
+  <!-- 🔹 SEO -->
+  <meta name="description" content="Trade gold, forex & metals 24/7 with Dark Venus AI & AI TradePulse. Smart AI bots, demo-ready setup, risk control, and quick payments via Sadapay IBAN." />
+  <meta name="keywords" content="Dark Venus, AI trading bot, AI TradePulse, Forex, Gold, MT4, MT5, automated trading, demo funds, Sadapay IBAN, passive income" />
 
-  <!-- Google Fonts -->
+  <!-- 🔹 Open Graph / Social -->
+  <meta property="og:title" content="Dark Venus AI / AI TradePulse — Smart Forex & Gold Trading" />
+  <meta property="og:description" content="Automated Forex & Gold trading bots. Real-time analytics, free downloads, and premium strategies. Pay via Sadapay IBAN." />
+  <meta property="og:image" content="https://yourdomain.com/preview.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
+  <!-- 🔹 Styles -->
   <style>
-    :root{
-      --bg-1:#0b1020; --bg-2:#071028; --accent:#7C5CFF; --accent-2:#00E0B8; --glass: rgba(255,255,255,0.06);
-      --glass-2: rgba(124,92,255,0.08); --text: #E6F0FF;
-    }
-    *{box-sizing:border-box;}
-    html,body{height:100%; margin:0; font-family:'Inter','Poppins',system-ui,sans-serif; color:var(--text); background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.06), transparent), linear-gradient(180deg,var(--bg-1),var(--bg-2)); -webkit-font-smoothing:antialiased;}
-    
-    .orb{position:fixed;filter:blur(42px);opacity:0.55;mix-blend-mode:screen;pointer-events:none}
-    .orb.o1{width:520px;height:520px;left:-120px;top:-80px;background:radial-gradient(circle at 30% 30%, var(--accent), transparent 40%)}
-    .orb.o2{width:420px;height:420px;right:-100px;bottom:-60px;background:radial-gradient(circle at 70% 70%, var(--accent-2), transparent 40%)}
-    .orb.o3{width:320px;height:320px;left:55%;top:10%;background:radial-gradient(circle at 40% 60%, #FF6B9A, transparent 40%);opacity:0.12}
-
-    .wrap{max-width:1200px;margin:40px auto;padding:28px}
-    .nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-    .logo{display:flex;gap:12px;align-items:center}
-    .logo .mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#5CE1FF);box-shadow:0 6px 30px rgba(124,92,255,0.18), 0 2px 8px rgba(0,224,184,0.08);display:flex;align-items:center;justify-content:center;font-weight:800;color:#05122b}
-    .nav a{color:rgba(230,240,255,0.85);text-decoration:none;margin-left:18px;font-weight:600}
-
-    .hero{display:grid;grid-template-columns:1fr 460px;gap:32px;align-items:start;margin-top:34px}
-    .card, .glow-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:28px;backdrop-filter: blur(8px);box-shadow: 0 8px 40px rgba(3,6,15,0.6);border:1px solid rgba(255,255,255,0.03); margin-bottom:24px; transition:0.3s}
-    .glow-card:hover{transform:translateY(-5px); box-shadow:0 0 40px rgba(0,255,255,0.6);}
-
-    h1{font-size:34px;margin:0 0 10px 0;line-height:1.05}
+    body{margin:0;font-family:'Inter','Poppins',sans-serif;background:linear-gradient(135deg,#0b1020,#1b1f36);color:#E6F0FF;line-height:1.6}
+    .wrap{max-width:1150px;margin:auto;padding:20px}
+    .card{background:rgba(255,255,255,0.06);border-radius:16px;padding:24px;margin:20px 0;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    h1,h2,h3{margin-top:0;font-family:'Poppins',sans-serif}
+    h1{font-size:2.2rem}
     h2{font-size:1.6rem;margin-bottom:12px}
-    .hero p, .card p, .glow-card p{margin:0 0 18px 0;color:rgba(230,240,255,0.9)}
-    ul{list-style:none;padding-left:0;margin:0; line-height:1.8;}
-
-    .feature-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--glass-2),transparent);font-weight:700;color:var(--text);font-size:13px;display:inline-flex;align-items:center;gap:8px}
-    .cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-
-    .btn{padding:14px 18px;border-radius:12px;font-weight:700;border:0;cursor:pointer;box-shadow:0 10px 30px rgba(124,92,255,0.12);transition:transform .12s ease, box-shadow .12s ease; text-decoration:none; display:inline-block; text-align:center;}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#5CE1FF);color:#05122b}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
-
-    .panel-visual{height:420px;border-radius:14px;overflow:hidden;display:flex;flex-direction:column; margin-top:24px}
-    .chart{flex:1;background:linear-gradient(180deg,#061126, #07112b);display:flex;align-items:center;justify-content:center;color:#7bd4ff;font-weight:700}
-    .panel-stats{display:flex;gap:10px;padding:14px;background:linear-gradient(90deg,rgba(255,255,255,0.01),transparent)}
-    .stat{flex:1;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:10px;text-align:center}
-    .stat .big{font-size:20px;font-weight:800}
-
-    footer{margin-top:38px;color:rgba(230,240,255,0.6);font-size:13px;text-align:center; padding:2rem; background: rgba(0,0,0,0.5);}
-
-    /* CMP Banner */
-    #cmp-banner {position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(20,20,20,0.95); color: #fff; font-family: Arial, sans-serif; padding: 18px; display: flex; justify-content: space-between; align-items: center; z-index: 9999; flex-wrap: wrap;}
-    #cmp-banner p { margin:0; flex:1; font-size: 14px; }
-    .cmp-btn { margin-left: 12px; padding: 10px 16px; border:none; border-radius:6px; cursor:pointer; font-weight:600; }
-    .cmp-consent { background: #4CAF50; color:#fff; }
-    .cmp-manage { background: #333; color:#fff; }
-
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr; padding:0;}
-      .panel-visual{order:2;margin-top:24px;}
-      .wrap{padding:18px;}
-    }
+    h3{font-size:1.2rem;margin-bottom:8px}
+    .pricing{display:flex;gap:20px;flex-wrap:wrap}
+    .price-card{flex:1;min-width:280px;background:rgba(255,255,255,0.05);padding:18px;border-radius:12px;text-align:center}
+    .iban-box{background:#10182c;padding:12px;border-radius:8px;word-break:break-all;margin-top:10px}
+    .btn{padding:10px 14px;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:0.2s}
+    .btn:hover{opacity:0.9;transform:translateY(-2px)}
+    .btn-primary{background:#7C5CFF;color:#fff}
+    .btn-secondary{background:#2b3654;color:#fff}
+    footer{text-align:center;color:rgba(255,255,255,0.6);margin-top:30px;font-size:13px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:768px){.grid-2{grid-template-columns:1fr}.pricing{flex-direction:column}}
+    /* Modal */
+    #demoModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;z-index:999}
+    .modal-content{background:#fff;color:#000;padding:24px;max-width:500px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    .close-btn{float:right;cursor:pointer;font-weight:bold;color:#333}
   </style>
 </head>
 <body>
-  <div class="orb o1"></div>
-  <div class="orb o2"></div>
-  <div class="orb o3"></div>
-
   <div class="wrap">
-    <nav class="nav">
-      <div class="logo">
-        <div class="mark">DV</div>
-        <div>
-          <div style="font-weight:800">Dark Venus AI / AI TradePulse</div>
-          <div style="font-size:12px;color:rgba(230,240,255,0.6)">Automated Forex & Metals Bot</div>
+
+    <!-- Hero -->
+    <div class="card">
+      <h1>🚀 Dark Venus AI / AI TradePulse</h1>
+      <p>Automated Forex & Gold trading bots with demo-ready setup, AI risk control, and real-time analytics. Start free, upgrade anytime, and pay securely via Sadapay IBAN.</p>
+      <button class="btn btn-primary" onclick="openDemo()">See Demo Report</button>
+    </div>
+
+    <!-- Pricing -->
+    <div class="card">
+      <h2>Pricing & Payment</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Free</h3>
+          <p>Download the basic bot and start with demo funds.</p>
+          <a href="#" class="btn btn-secondary">Download Free</a>
         </div>
+
+        <div class="price-card">
+          <h3>Premium — $49/month</h3>
+          <p>Advanced strategies, updates, and priority support.</p>
+          <p><strong>Pay via Sadapay IBAN:</strong></p>
+          <div class="iban-box" id="ibanBox">
+            PK47SADA0000003104495429 <!-- 🔹 Replace with your real Sadapay IBAN -->
+          </div>
+          <button class="btn btn-primary" onclick="copyIBAN()">Copy IBAN</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Section -->
+    <div class="card grid-2">
+      <div>
+        <h2>Why Choose Us?</h2>
+        <ul>
+          <li>✅ AI-powered auto trading</li>
+          <li>✅ Works with MT4 & MT5</li>
+          <li>✅ Smart risk management</li>
+          <li>✅ Regular updates & support</li>
+        </ul>
       </div>
       <div>
-        <a href="#how">How it works</a>
-        <a href="#proof">Proof</a>
-        <a href="#faq">FAQ</a>
+        <h2>What Users Say</h2>
+        <p><em>"Dark Venus AI boosted my gold trading results instantly!"</em> — Ali, Pakistan</p>
+        <p><em>"Easy to use and transparent. The IBAN payment is simple."</em> — Sarah, UAE</p>
       </div>
-    </nav>
+    </div>
 
-    <section class="hero">
-      <div>
-        <div class="card">
-          <h1>Trade Gold, Forex & Metals 24/7 with AI</h1>
-          <p>Dark Venus AI Bot and AI TradePulse Bot trade automatically with smart risk management, real-time analytics, and demo-ready setup for beginners & pros.</p>
-          <div class="feature-list">
-            <span class="chip">AI Risk Engine</span>
-            <span class="chip">Gold & Forex Focused</span>
-            <span class="chip">1-Click Broker Connect</span>
-            <span class="chip">Real-Time Analytics</span>
-          </div>
-          <div class="cta-row">
-            <button class="btn btn-primary" id="startBtn">Download Dark Venus Bot</button>
-            <a href="#" class="btn btn-primary">Download AI TradePulse Bot</a>
-            <button class="btn btn-ghost" id="demoBtn">View Demo Report</button>
-          </div>
-        </div>
-
-        <div class="glow-card">
-          <h2>📈 Get $10,000 Virtual Funds</h2>
-          <p>Join Exness and claim <strong>$10,000 in virtual funds</strong> to practice trading safely. Perfect for beginners and pros alike.</p>
-          <a href="https://one.exnesstrack.org/a/88ap9qbpgv?source=app" class="btn">Claim Free $10,000</a>
-        </div>
-
-        <div class="glow-card">
-          <h2>🌍 Why Choose AI TradePulse?</h2>
-          <ul>
-            <li>✅ Built for MT4 with smart AI logic</li>
-            <li>✅ Free to download & use</li>
-            <li>✅ Partnered with Exness for safe trading</li>
-            <li>✅ Earn while you learn with virtual funds</li>
-          </ul>
-        </div>
-      </div>
-
-      <aside class="panel-visual card">
-        <div class="chart" aria-hidden>
-          <svg viewBox="0 0 600 220" class="spark" width="100%" height="100%" preserveAspectRatio="none" style="padding:18px">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0" stop-color="#7C5CFF"/>
-                <stop offset="1" stop-color="#00E0B8"/>
-              </linearGradient>
-            </defs>
-            <path d="M0,160 C40,150 80,90 120,120 C160,150 200,80 240,110 C280,140 320,70 360,100 C400,130 440,80 480,60 C520,40 560,30 600,20" stroke="url(#g1)" class="animate"/>
-          </svg>
-        </div>
-        <div class="panel-stats">
-          <div class="stat"><div class="small">Real-time P&L</div><div class="big">+$12,842</div></div>
-          <div class="stat"><div class="small">Winning Trades</div><div class="big">78%</div></div>
-          <div class="stat"><div class="small">Pairs</div><div class="big">GOLD, EURUSD</div></div>
-        </div>
-      </aside>
-    </section>
+    <!-- FAQ -->
+    <div class="card">
+      <h2>FAQ</h2>
+      <p><strong>How do I pay?</strong> → Use the Sadapay IBAN shown above. Copy & pay from your banking app.</p>
+      <p><strong>Can I test first?</strong> → Yes, download the free version with demo funds.</p>
+      <p><strong>Which brokers work?</strong> → Works with Exness, XM, InstaForex, and more (MT4/MT5).</p>
+    </div>
 
     <footer>
-      © <span id="year"></span> Dark Venus AI / AI TradePulse. All rights reserved. Powered by <a href="https://one.exnesstrack.org/a/88ap9qbpgv?source=app" style="color:#00f2fe;">Exness Affiliate</a>.
+      © <span id="year"></span> Dark Venus AI / AI TradePulse. All rights reserved. |
+      <a href="#" style="color:#7C5CFF">Privacy Policy</a> |
+      <a href="#" style="color:#7C5CFF">Contact</a>
     </footer>
   </div>
 
-  <!-- CMP Banner -->
-  <div id="cmp-banner">
-    <p>We use cookies to improve your experience. By clicking “Consent” you accept all cookies, or click “Manage Options” to customize.</p>
-    <div>
-      <button class="cmp-btn cmp-manage" onclick="openCMP()">Manage Options</button>
-      <button class="cmp-btn cmp-consent" onclick="acceptCookies()">Consent</button>
+  <!-- Demo Modal -->
+  <div id="demoModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeDemo()">×</span>
+      <h2>📊 Demo Report</h2>
+      <p>This is a preview of how Dark Venus AI performs with gold & forex trades. For full analytics, upgrade to Premium.</p>
     </div>
   </div>
 
-  <script>
-    document.getElementById('year').innerText = new Date().getFullYear();
+  <!-- Scripts -->
+  <script defer>
+    document.getElementById("year").innerText = new Date().getFullYear();
 
-    const DOWNLOAD_LINK = 'https://drive.google.com/uc?export=download&id=1wBEaODoks8lWECPBwE7yWqqyMzubNTIJ';
-    document.getElementById('startBtn').addEventListener('click', ()=>{window.open(DOWNLOAD_LINK,'_blank');});
-    document.getElementById('demoBtn').addEventListener('click', ()=>{alert('Demo report downloaded (simulated).');});
-
-    // CMP IAB TCF v2 compliant
-    window.__tcfapi = window.__tcfapi || function(){ (window.__tcfapi.queue = window.__tcfapi.queue || []).push(arguments); };
-
-    function acceptCookies() {
-      __tcfapi('setConsent', 2, function(){ console.log('Consent granted'); });
-      localStorage.setItem('cookies_accepted', 'true');
-      document.getElementById('cmp-banner').style.display = 'none';
+    function copyIBAN(){
+      const iban = document.getElementById("ibanBox").innerText.trim();
+      navigator.clipboard.writeText(iban).then(()=>{
+        alert("IBAN copied: " + iban);
+      });
     }
 
-    function openCMP() {
-      alert("This is where you can open a detailed CMP modal for ad/analytics preferences.");
-    }
-
-    if(localStorage.getItem('cookies_accepted') === 'true'){
-      document.getElementById('cmp-banner').style.display = 'none';
-    }
+    function openDemo(){document.getElementById("demoModal").style.display="flex";}
+    function closeDemo(){document.getElementById("demoModal").style.display="none";}
   </script>
 </body>
-</html>
+  </html>
